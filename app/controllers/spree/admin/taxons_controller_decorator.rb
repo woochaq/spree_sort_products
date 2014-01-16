@@ -4,7 +4,7 @@ module Spree
       before_filter :load_taxon, :only => [:sort_products, :update_products]
 
       def sort_products
-        @products = @taxon.products
+        @products = @taxon.products.active
       end
 
       def update_products
