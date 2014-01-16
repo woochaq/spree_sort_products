@@ -22,13 +22,13 @@
 
 <ul id="products" class="thumbnails">
   <% @products.each do |product| %>
-    <%= content_tag_for :li, product, :class=> "three columns", :style => 'height: 300px; list-style-type: none' do %>
-      <div class="two columns thumbnail" style = "cursor: pointer;" value="<%= product.id %>">
-          <%= product_image(product, :width => "145", :height => "190", :id=>"image-map") %>
+    <%= content_tag_for :li, product, :class=> "two columns", :style => 'width: 125px; height: 200px; list-style-type: none' do %>
+      <div class="columns thumbnail" style = "width: 130px; cursor: pointer;" value="<%= product.id %>">
+          <%= small_image(product, :width => "140", :id=>"image-map") %>
           <div class="caption">
             <% product_name = product.name.split(" ") %>
             <% product_name.delete(product_name.last) %>
-            <h5><%= product_name.join(" ") %></h5>
+            <div><%= product_name.join(" ") %></div>
           </div>
       </div>
     <% end %>
